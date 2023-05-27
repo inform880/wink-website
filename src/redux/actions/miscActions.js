@@ -2,23 +2,23 @@ import {
   IS_AUTHENTICATING, LOADING, SET_AUTH_STATUS, SET_REQUEST_STATUS
 } from '@/constants/constants';
 
-export const setLoading = (bool = true) => ({
+export const setLoading = (bool = true,) => ({
   type: LOADING,
-  payload: bool
+  payload: bool,
 });
 
-export const setAuthenticating = (bool = true) => ({
+export const setAuthenticating = (bool = true,) => ({
   type: IS_AUTHENTICATING,
-  payload: bool
+  payload: bool,
 });
 
-export const setRequestStatus = (status) => ({
+export const setRequestStatus = (status,) => ({
   type: SET_REQUEST_STATUS,
-  payload: status
+  payload: status,
 });
 
 
-export const setAuthStatus = (status = null) => ({
+export const setAuthStatus = (status = null,) => ({
   type: SET_AUTH_STATUS,
-  payload: status
+  payload: status,
 });

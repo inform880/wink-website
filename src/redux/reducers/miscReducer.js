@@ -9,30 +9,30 @@ const initState = {
   isAuthenticating: false,
   authStatus: null,
   requestStatus: null,
-  theme: 'light'
+  theme: 'light',
 };
 
-export default (state = initState, action) => {
+export default (state = initState, action,) => {
   switch (action.type) {
     case LOADING:
       return {
         ...state,
-        loading: action.payload
+        loading: action.payload,
       };
     case IS_AUTHENTICATING:
       return {
         ...state,
-        isAuthenticating: action.payload
+        isAuthenticating: action.payload,
       };
     case SET_REQUEST_STATUS:
       return {
         ...state,
-        requestStatus: action.payload
+        requestStatus: action.payload,
       };
     case SET_AUTH_STATUS:
       return {
         ...state,
-        authStatus: action.payload
+        authStatus: action.payload,
       };
     default:
       return state;

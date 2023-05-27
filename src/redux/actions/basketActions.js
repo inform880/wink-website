@@ -5,31 +5,31 @@ import {
   SET_BASKET_ITEMS
 } from '@/constants/constants';
 
-export const setBasketItems = (items = []) => ({
+export const setBasketItems = (items = [],) => ({
   type: SET_BASKET_ITEMS,
-  payload: items
+  payload: items,
 });
 
-export const addToBasket = (product) => ({
+export const addToBasket = (product,) => ({
   type: ADD_TO_BASKET,
-  payload: product
+  payload: product,
 });
 
-export const removeFromBasket = (id) => ({
+export const removeFromBasket = (id,) => ({
   type: REMOVE_FROM_BASKET,
-  payload: id
+  payload: id,
 });
 
 export const clearBasket = () => ({
-  type: CLEAR_BASKET
+  type: CLEAR_BASKET,
 });
 
-export const addQtyItem = (id) => ({
+export const addQtyItem = (id,) => ({
   type: ADD_QTY_ITEM,
-  payload: id
+  payload: id,
 });
 
-export const minusQtyItem = (id) => ({
+export const minusQtyItem = (id,) => ({
   type: MINUS_QTY_ITEM,
-  payload: id
+  payload: id,
 });

@@ -6,35 +6,35 @@ import {
   SET_MIN_PRICE_FILTER, SET_TEXT_FILTER
 } from '@/constants/constants';
 
-export const setTextFilter = (keyword) => ({
+export const setTextFilter = (keyword,) => ({
   type: SET_TEXT_FILTER,
-  payload: keyword
+  payload: keyword,
 });
 
-export const setMinPriceFilter = (min) => ({
+export const setMinPriceFilter = (min,) => ({
   type: SET_MIN_PRICE_FILTER,
-  payload: min
+  payload: min,
 });
 
-export const setMaxPriceFilter = (max) => ({
+export const setMaxPriceFilter = (max,) => ({
   type: SET_MAX_PRICE_FILTER,
-  payload: max
+  payload: max,
 });
 
 export const resetFilter = () => ({
-  type: RESET_FILTER
+  type: RESET_FILTER,
 });
 
 export const clearRecentSearch = () => ({
-  type: CLEAR_RECENT_SEARCH
+  type: CLEAR_RECENT_SEARCH,
 });
 
-export const removeSelectedRecent = (keyword) => ({
+export const removeSelectedRecent = (keyword,) => ({
   type: REMOVE_SELECTED_RECENT,
-  payload: keyword
+  payload: keyword,
 });
 
-export const applyFilter = (filters) => ({
+export const applyFilter = (filters,) => ({
   type: APPLY_FILTER,
-  payload: filters
+  payload: filters,
 });

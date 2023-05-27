@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import { useDidMount } from '@/hooks';
 import PropType from 'prop-types';
 import React, { useEffect, useState } from 'react';

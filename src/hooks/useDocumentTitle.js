@@ -1,13 +1,13 @@
 import { useLayoutEffect } from 'react';
 
-const useDocumentTitle = (title) => {
+const useDocumentTitle = (title,) => {
   useLayoutEffect(() => {
     if (title) {
       document.title = title;
     } else {
       document.title = 'Wink - eCommerce React App';
     }
-  }, [title]);
+  }, [title,],);
 };
 
 export default useDocumentTitle;

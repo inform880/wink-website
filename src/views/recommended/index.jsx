@@ -1,17 +1,17 @@
+import React from 'react';
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
 import { useDocumentTitle, useRecommendedProducts, useScrollTop } from '@/hooks';
-import React from 'react';
 
 const RecommendedProducts = () => {
-  useDocumentTitle('Recommended Products | Wink');
+  useDocumentTitle('Recommended Products | Wink',);
   useScrollTop();
 
   const {
     recommendedProducts,
     fetchRecommendedProducts,
     isLoading,
-    error
+    error,
   } = useRecommendedProducts();
 
   return (

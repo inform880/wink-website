@@ -5,28 +5,28 @@ import {
 } from '@/constants/constants';
 
 // insert in profile array
-export const registerUser = (user) => ({
+export const registerUser = (user,) => ({
   type: REGISTER_USER,
-  payload: user
+  payload: user,
 });
 
-export const getUser = (uid) => ({
+export const getUser = (uid,) => ({
   type: GET_USER,
-  payload: uid
+  payload: uid,
 });
 
 // different from registerUser -- only inserted in admins' users array not in profile array
-export const addUser = (user) => ({
+export const addUser = (user,) => ({
   type: ADD_USER,
-  payload: user
+  payload: user,
 });
 
-export const editUser = (updates) => ({
+export const editUser = (updates,) => ({
   type: EDIT_USER,
-  payload: updates
+  payload: updates,
 });
 
-export const deleteUser = (id) => ({
+export const deleteUser = (id,) => ({
   type: DELETE_USER,
-  payload: id
+  payload: id,
 });

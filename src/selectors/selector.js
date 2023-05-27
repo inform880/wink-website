@@ -1,22 +1,22 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-else-return */
-export const selectFilter = (products, filter) => {
+export const selectFilter = (products, filter,) => {
   if (!products || products.length === 0) return [];
 
   const keyword = filter.keyword.toLowerCase();
 
-  return products.filter((product) => {
+  return products.filter((product,) => {
     const isInRange = filter.maxPrice
       ? (product.price >= filter.minPrice && product.price <= filter.maxPrice)
       : true;
-    const matchKeyword = product.keywords ? product.keywords.includes(keyword) : true;
+    const matchKeyword = product.keywords ? product.keywords.includes(keyword,) : true;
     // const matchName = product.name ? product.name.toLowerCase().includes(keyword) : true;
     const matchDescription = product.description
-      ? product.description.toLowerCase().includes(keyword)
+      ? product.description.toLowerCase().includes(keyword,)
       : true;
 
     return ((matchKeyword || matchDescription) && isInRange);
-  }).sort((a, b) => {
+  },).sort((a, b,) => {
     if (filter.sortBy === 'name-desc') {
       return a.name < b.name ? 1 : -1;
     } else if (filter.sortBy === 'name-asc') {
@@ -26,11 +26,11 @@ export const selectFilter = (products, filter) => {
     }
 
     return a.price > b.price ? 1 : -1;
-  });
+  },);
 };
 
 // Select product with highest price
-export const selectMax = (products) => {
+export const selectMax = (products,) => {
   if (!products || products.length === 0) return 0;
 
   let high = products[0];
@@ -41,11 +41,11 @@ export const selectMax = (products) => {
     }
   }
 
-  return Math.floor(high.price);
+  return Math.floor(high.price,);
 };
 
 // Select product with lowest price
-export const selectMin = (products) => {
+export const selectMin = (products,) => {
   if (!products || products.length === 0) return 0;
   let low = products[0];
 
@@ -55,5 +55,5 @@ export const selectMin = (products) => {
     }
   }
 
-  return Math.floor(low.price);
+  return Math.floor(low.price,);
 };

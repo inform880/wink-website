@@ -9,21 +9,21 @@ const defaultState = {
     name: '',
     cardnumber: '',
     expiry: '',
-    ccv: ''
-  }
+    ccv: '',
+  },
 };
 
-export default (state = defaultState, action) => {
+export default (state = defaultState, action,) => {
   switch (action.type) {
     case SET_CHECKOUT_SHIPPING_DETAILS:
       return {
         ...state,
-        shipping: action.payload
+        shipping: action.payload,
       };
     case SET_CHECKOUT_PAYMENT_DETAILS:
       return {
         ...state,
-        payment: action.payload
+        payment: action.payload,
       };
     case RESET_CHECKOUT:
       return defaultState;

@@ -15,7 +15,7 @@ const rootReducer = {
   filter: filterReducer,
   users: userReducer,
   checkout: checkoutReducer,
-  app: miscReducer
+  app: miscReducer,
 };
 
 export default rootReducer;

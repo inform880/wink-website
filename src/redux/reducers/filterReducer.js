@@ -11,43 +11,43 @@ const initState = {
   keyword: '',
   minPrice: 0,
   maxPrice: 0,
-  sortBy: ''
+  sortBy: '',
 };
 
-export default (state = initState, action) => {
+export default (state = initState, action,) => {
   switch (action.type) {
     case SET_TEXT_FILTER:
       return {
         ...state,
-        recent: (!!state.recent.find((n) => n === action.payload) || action.payload === '') ? state.recent : [action.payload, ...state.recent],
-        keyword: action.payload
+        recent: (!!state.recent.find((n,) => n === action.payload,) || action.payload === '') ? state.recent : [action.payload, ...state.recent,],
+        keyword: action.payload,
       };
     case SET_MAX_PRICE_FILTER:
       return {
         ...state,
-        maxPrice: action.payload
+        maxPrice: action.payload,
       };
     case SET_MIN_PRICE_FILTER:
       return {
         ...state,
-        minPrice: action.payload
+        minPrice: action.payload,
       };
     case RESET_FILTER:
       return initState;
     case CLEAR_RECENT_SEARCH:
       return {
         ...state,
-        recent: []
+        recent: [],
       };
     case REMOVE_SELECTED_RECENT:
       return {
         ...state,
-        recent: state.recent.filter((item) => item !== action.payload)
+        recent: state.recent.filter((item,) => item !== action.payload,),
       };
     case APPLY_FILTER:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       };
     default:
       return state;

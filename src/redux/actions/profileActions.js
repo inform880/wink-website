@@ -7,32 +7,32 @@ import {
 } from '@/constants/constants';
 
 export const clearProfile = () => ({
-  type: CLEAR_PROFILE
+  type: CLEAR_PROFILE,
 });
 
-export const setProfile = (user) => ({
+export const setProfile = (user,) => ({
   type: SET_PROFILE,
-  payload: user
+  payload: user,
 });
 
-export const updateEmail = (password, newEmail) => ({
+export const updateEmail = (password, newEmail,) => ({
   type: UPDATE_EMAIL,
   payload: {
     password,
-    newEmail
-  }
+    newEmail,
+  },
 });
 
-export const updateProfile = (newProfile) => ({
+export const updateProfile = (newProfile,) => ({
   type: UPDATE_PROFILE,
   payload: {
     updates: newProfile.updates,
     files: newProfile.files,
-    credentials: newProfile.credentials
-  }
+    credentials: newProfile.credentials,
+  },
 });
 
-export const updateProfileSuccess = (updates) => ({
+export const updateProfileSuccess = (updates,) => ({
   type: UPDATE_PROFILE_SUCCESS,
-  payload: updates
+  payload: updates,
 });

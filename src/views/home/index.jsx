@@ -1,30 +1,30 @@
 import { ArrowRightOutlined } from '@ant-design/icons';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
 import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
 import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
-import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-  useDocumentTitle('Wink | Home');
+  useDocumentTitle('Wink | Home',);
   useScrollTop();
 
   const {
     featuredProducts,
     fetchFeaturedProducts,
     isLoading: isLoadingFeatured,
-    error: errorFeatured
-  } = useFeaturedProducts(6);
+    error: errorFeatured,
+  } = useFeaturedProducts(6,);
   const {
     recommendedProducts,
     fetchRecommendedProducts,
     isLoading: isLoadingRecommended,
-    error: errorRecommended
-  } = useRecommendedProducts(6);
+    error: errorRecommended,
+  } = useRecommendedProducts(6,);
 
   return (
     <main className="content">
@@ -36,8 +36,8 @@ const Home = () => {
             </h1>
             <p>
               <strong>
-              Discover the ultimate fusion of portability, discretion, and premium CBD with our Wink CBD Vape Pen. Designed to fit in the palm of your hand, our vape pen is the epitome of convenience. It's small enough to fit in your pocket or bag easily, making it the perfect companion for those always on the go.
-              Our CBD vape pen offers a sleek, modern design that keeps your CBD intake as inconspicuous as possible. The non-descript appearance and silent operation let you experience the soothing benefits of CBD without drawing unwanted attention. The minimalist design aesthetic perfectly blends in with everyday objects, adding an additional layer of discretion to your CBD use.
+                Discover the ultimate fusion of portability, discretion, and premium THC with our Wink THC Vape Pen. Designed to fit in the palm of your hand, our vape pen is the epitome of convenience. It's small enough to fit in your pocket or bag easily, making it the perfect companion for those always on the go.
+                Our THC vape pen offers a sleek, modern design that keeps your THC intake as inconspicuous as possible. The non-descript appearance and silent operation let you experience the soothing benefits of THC without drawing unwanted attention. The minimalist design aesthetic perfectly blends in with everyday objects, adding an additional layer of discretion to your THC use.
               </strong>
             </p>
             <br />
