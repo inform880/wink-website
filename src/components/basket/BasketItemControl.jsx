@@ -45,7 +45,6 @@ BasketItemControl.propTypes = {
   product: PropType.shape({
     id: PropType.string,
     name: PropType.string,
-    brand: PropType.string,
     price: PropType.number,
     quantity: PropType.number,
     maxQuantity: PropType.number,

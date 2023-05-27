@@ -9,7 +9,7 @@ const ProductForm = lazy(() => import('../components/ProductForm'));
 
 const AddProduct = () => {
   useScrollTop();
-  useDocumentTitle('Add New Product | Salinaka');
+  useDocumentTitle('Add New Product | Wink');
   const isLoading = useSelector((state) => state.app.loading);
   const dispatch = useDispatch();
 
@@ -33,7 +33,6 @@ const AddProduct = () => {
           onSubmit={onSubmit}
           product={{
             name: '',
-            brand: '',
             price: 0,
             maxQuantity: 0,
             description: '',

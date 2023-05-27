@@ -100,7 +100,6 @@ const ViewProduct = () => {
             </div>
             <div className="product-modal-details">
               <br />
-              <span className="text-subtle">{product.brand}</span>
               <h1 className="margin-top-0">{product.name}</h1>
               <span>{product.description}</span>
               <br />
@@ -108,15 +107,15 @@ const ViewProduct = () => {
               <div className="divider" />
               <br />
               <div>
-                <span className="text-subtle">Lens Width and Frame Size</span>
+                {/* <span className="text-subtle">Lens Width and Frame Size</span>
                 <br />
-                <br />
-                <Select
-                  placeholder="--Select Size--"
+                <br /> */}
+                {/* <Select
+                  placeholder="Select Size"
                   onChange={onSelectedSizeChange}
                   options={product.sizes.sort((a, b) => (a < b ? -1 : 1)).map((size) => ({ label: `${size} mm`, value: size }))}
                   styles={{ menu: (provided) => ({ ...provided, zIndex: 10 }) }}
-                />
+                /> */}
               </div>
               <br />
               {product.availableColors.length >= 1 && (
@@ -142,7 +141,7 @@ const ViewProduct = () => {
               </div>
             </div>
           </div>
-          <div style={{ marginTop: '10rem' }}>
+          {/* <div style={{ marginTop: '10rem' }}>
             <div className="display-header">
               <h1>Recommended</h1>
               <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
@@ -156,7 +155,7 @@ const ViewProduct = () => {
             ) : (
               <ProductShowcaseGrid products={recommendedProducts} skeletonCount={3} />
             )}
-          </div>
+          </div> */}
         </div>
       )}
     </main>

@@ -12,20 +12,10 @@ import PropType from 'prop-types';
 import React from 'react';
 import * as Yup from 'yup';
 
-// Default brand names that I used. You can use what you want
-const brandOptions = [
-  { value: 'Salt Maalat', label: 'Salt Maalat' },
-  { value: 'Betsin Maalat', label: 'Betsin Maalat' },
-  { value: 'Sexbomb', label: 'Sexbomb' },
-  { value: 'Black Kibal', label: 'Black Kibal' }
-];
-
 const FormSchema = Yup.object().shape({
   name: Yup.string()
     .required('Product name is required.')
     .max(60, 'Product name must only be less than 60 characters.'),
-  brand: Yup.string()
-    .required('Brand name is required.'),
   price: Yup.number()
     .positive('Price is invalid.')
     .integer('Price should be an integer.')
@@ -52,7 +42,6 @@ const FormSchema = Yup.object().shape({
 const ProductForm = ({ product, onSubmit, isLoading }) => {
   const initFormikValues = {
     name: product?.name || '',
-    brand: product?.brand || '',
     price: product?.price || 0,
     maxQuantity: product?.maxQuantity || 0,
     description: product?.description || '',
@@ -109,18 +98,6 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     placeholder="Gago"
                     style={{ textTransform: 'capitalize' }}
                     component={CustomInput}
-                  />
-                </div>
-                &nbsp;
-                <div className="product-form-field">
-                  <CustomCreatableSelect
-                    defaultValue={{ label: values.brand, value: values.brand }}
-                    name="brand"
-                    iid="brand"
-                    options={brandOptions}
-                    disabled={isLoading}
-                    placeholder="Select/Create Brand"
-                    label="* Brand"
                   />
                 </div>
               </div>
@@ -316,7 +293,6 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
 ProductForm.propTypes = {
   product: PropType.shape({
     name: PropType.string,
-    brand: PropType.string,
     price: PropType.number,
     maxQuantity: PropType.number,
     description: PropType.string,
