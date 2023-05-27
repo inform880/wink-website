@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { ArrowRightOutlined } from '@ant-design/icons';
 import React from 'react';
+import { ArrowRightOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
