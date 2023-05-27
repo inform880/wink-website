@@ -1,11 +1,20 @@
+/* eslint-disable max-len */
 import { ArrowRightOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageDisplay } from '@/components/common';
 import { ProductShowcaseGrid } from '@/components/product';
-import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
+import bannerImg from '@/images/MainBanner.jpeg';
 import {
-  useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
+  FEATURED_PRODUCTS,
+  // RECOMMENDED_PRODUCTS,
+  SHOP
+} from '@/constants/routes';
+import {
+  useDocumentTitle,
+  useFeaturedProducts,
+  // useRecommendedProducts,
+  useScrollTop
 } from '@/hooks';
 
 
@@ -19,12 +28,12 @@ const Home = () => {
     isLoading: isLoadingFeatured,
     error: errorFeatured,
   } = useFeaturedProducts(6,);
-  const {
-    recommendedProducts,
-    fetchRecommendedProducts,
-    isLoading: isLoadingRecommended,
-    error: errorRecommended,
-  } = useRecommendedProducts(6,);
+  // const {
+  //   recommendedProducts,
+  //   fetchRecommendedProducts,
+  //   isLoading: isLoadingRecommended,
+  //   error: errorRecommended,
+  // } = useRecommendedProducts(6,);
 
   return (
     <main className="content">
@@ -36,7 +45,7 @@ const Home = () => {
             </h1>
             <p>
               <strong>
-                Discover the ultimate fusion of portability, discretion, and premium THC with our Wink THC Vape Pen. Designed to fit in the palm of your hand, our vape pen is the epitome of convenience. It's small enough to fit in your pocket or bag easily, making it the perfect companion for those always on the go.
+                Discover the ultimate fusion of portability, discretion, and premium THC with our Wink THC Vape Pen. Designed to fit in the palm of your hand, our vape pen is the epitome of convenience. It&apos;s small enough to fit in your pocket or bag easily, making it the perfect companion for those always on the go.
                 Our THC vape pen offers a sleek, modern design that keeps your THC intake as inconspicuous as possible. The non-descript appearance and silent operation let you experience the soothing benefits of THC without drawing unwanted attention. The minimalist design aesthetic perfectly blends in with everyday objects, adding an additional layer of discretion to your THC use.
               </strong>
             </p>
@@ -46,7 +55,7 @@ const Home = () => {
               <ArrowRightOutlined />
             </Link>
           </div>
-          {/* <div className="banner-img"><img src={bannerImg} alt="" /></div> */}
+          <div className="banner-img"><img src={bannerImg} alt="" /></div>
         </div>
         <div className="display">
           <div className="display-header">
