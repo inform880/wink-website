@@ -1,17 +1,17 @@
-import * as Route from '@/constants/routes';
-import logo from '@/images/logo-full.svg';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import * as Route from '@/constants/routes';
+import logo from '@/images/logo-full.svg';
 
 const Footer = () => {
-  const { pathname } = useLocation();
+  const { pathname, } = useLocation();
 
   const visibleOnlyPath = [
     Route.HOME,
-    Route.SHOP
+    Route.SHOP,
   ];
 
-  return !visibleOnlyPath.includes(pathname) ? null : (
+  return !visibleOnlyPath.includes(pathname,) ? null : (
     <footer className="footer">
       <div className="footer-col-1">
         {/* <strong>

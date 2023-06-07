@@ -1,20 +1,20 @@
-import { ADMIN_DASHBOARD } from '@/constants/routes';
-import logo from '@/images/logo-full.svg';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import logo from '@/images/logo-full.svg';
+import { ADMIN_DASHBOARD } from '@/constants/routes';
 import UserAvatar from '@/views/account/components/UserAvatar';
 
 const AdminNavigation = () => {
-  const { isAuthenticating, profile } = useSelector((state) => ({
+  const { isAuthenticating, profile, } = useSelector((state,) => ({
     isAuthenticating: state.app.isAuthenticating,
-    profile: state.profile
-  }));
+    profile: state.profile,
+  }),);
 
   return (
     <nav className="navigation navigation-admin">
       <div className="logo">
-        <Link to={ADMIN_DASHBOARD} style={{ display: 'flex', alignItems: 'center' }}>
+        <Link to={ADMIN_DASHBOARD} style={{ display: 'flex', alignItems: 'center', }}>
           <img alt="Logo" src={logo} />
           <h3>ADMIN PANEL</h3>
         </Link>

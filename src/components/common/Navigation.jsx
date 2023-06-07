@@ -1,12 +1,12 @@
 /* eslint-disable indent */
 import { FilterOutlined, ShoppingOutlined } from '@ant-design/icons';
-import * as ROUTE from '@/constants/routes';
-import logo from '@/images/logo-full.svg';
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Link, NavLink, useLocation
 } from 'react-router-dom';
+import logo from '@/images/logo-full.svg';
+import * as ROUTE from '@/constants/routes';
 import UserAvatar from '@/views/account/components/UserAvatar';
 import BasketToggle from '../basket/BasketToggle';
 import Badge from './Badge';
@@ -15,32 +15,32 @@ import MobileNavigation from './MobileNavigation';
 import SearchBar from './SearchBar';
 
 const Navigation = () => {
-  const navbar = useRef(null);
-  const { pathname } = useLocation();
+  const navbar = useRef(null,);
+  const { pathname, } = useLocation();
 
-  const store = useSelector((state) => ({
+  const store = useSelector((state,) => ({
     basketLength: state.basket.length,
     user: state.auth,
     isAuthenticating: state.app.isAuthenticating,
-    isLoading: state.app.loading
-  }));
+    isLoading: state.app.loading,
+  }),);
 
   const scrollHandler = () => {
     if (navbar.current && window.screen.width > 480) {
       if (window.pageYOffset >= 70) {
-        navbar.current.classList.add('is-nav-scrolled');
+        navbar.current.classList.add('is-nav-scrolled',);
       } else {
-        navbar.current.classList.remove('is-nav-scrolled');
+        navbar.current.classList.remove('is-nav-scrolled',);
       }
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
-    return () => window.removeEventListener('scroll', scrollHandler);
-  }, []);
+    window.addEventListener('scroll', scrollHandler,);
+    return () => window.removeEventListener('scroll', scrollHandler,);
+  }, [],);
 
-  const onClickLink = (e) => {
+  const onClickLink = (e,) => {
     if (store.isAuthenticating) e.preventDefault();
   };
 
@@ -51,7 +51,7 @@ const Navigation = () => {
     ROUTE.CHECKOUT_STEP_3,
     ROUTE.SIGNIN,
     ROUTE.SIGNUP,
-    ROUTE.FORGOT_PASSWORD
+    ROUTE.FORGOT_PASSWORD,
   ];
 
   if (store.user && store.user.role === 'ADMIN') {
@@ -89,16 +89,16 @@ const Navigation = () => {
       <ul className="navigation-menu">
         <li className="navigation-menu-item">
           <BasketToggle>
-            {({ onClickToggle }) => (
+            {({ onClickToggle, },) => (
               <button
                 className="button-link navigation-menu-link basket-toggle"
-                disabled={basketDisabledpathnames.includes(pathname)}
+                disabled={basketDisabledpathnames.includes(pathname,)}
                 onClick={onClickToggle}
                 type="button"
               >
 
                 <Badge count={store.basketLength}>
-                  <ShoppingOutlined style={{ fontSize: '2.4rem' }} />
+                  <ShoppingOutlined style={{ fontSize: '2.4rem', }} />
                 </Badge>
               </button>
             )}
@@ -121,7 +121,7 @@ const Navigation = () => {
             )}
             {pathname !== ROUTE.SIGNIN && (
               <Link
-                className="button button-small button-muted margin-left-s"
+                className="button button-small margin-left-s"
                 onClick={onClickLink}
                 to={ROUTE.SIGNIN}
               >
